@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Solar Energy | EcoPower</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8fff2;
+            color: #183b20;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            background: #123d25;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav h2 {
+            color: #ffe45c;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffe45c;
+        }
+
+        /* HERO */
+
+        .solar-hero {
+            min-height: 80vh;
+            padding: 60px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background:
+            linear-gradient(
+                rgba(255, 220, 80, 0.25),
+                rgba(255, 255, 255, 0.2)
+            ),
+            #dfffe2;
+        }
+
+        .hero-content {
+            width: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 60px;
+            color: #d88700;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h2 {
+            font-size: 28px;
+            color: #176b35;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 19px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .hero-image {
+            width: 45%;
+            text-align: center;
+            font-size: 190px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #176b35;
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #d88700;
+        }
+
+        /* COMMON */
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 40px;
+            color: #176b35;
+            margin-bottom: 40px;
+        }
+
+        /* INTRO */
+
+        .intro {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        /* HOW IT WORKS */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .process-box {
+            background: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px #0002;
+            transition: 0.3s;
+        }
+
+        .process-box:hover {
+            transform: translateY(-10px);
+        }
+
+        .process-box .icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .process-box h3 {
+            color: #d88700;
+            margin-bottom: 12px;
+        }
+
+        .process-box p {
+            line-height: 1.6;
+        }
+
+        /* BENEFITS */
+
+        .benefits {
+            background: #123d25;
+            color: white;
+        }
+
+        .benefit-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .benefit {
+            border: 1px solid #ffffff55;
+            padding: 30px;
+            text-align: center;
+            border-radius: 18px;
+        }
+
+        .benefit-icon {
+            font-size: 50px;
+        }
+
+        .benefit h3 {
+            color: #ffe45c;
+            margin: 15px 0;
+        }
+
+        .benefit p {
+            line-height: 1.6;
+        }
+
+        /* CALCULATOR */
+
+        .calculator {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px #0002;
+            text-align: center;
+        }
+
+        .calculator input {
+            width: 100%;
+            padding: 14px;
+            margin: 15px 0;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+        }
+
+        .calculator button {
+            padding: 13px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #d88700;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #solarResult {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #176b35;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #123d25;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* MOBILE */
+
+        @media(max-width: 800px) {
+
+            .solar-hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: 45px;
+            }
+
+            .hero-image {
+                width: 100%;
+                font-size: 110px;
+                margin-top: 30px;
+            }
+
+            .process {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .benefit-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 500px) {
+
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <h2>☀️ EcoPower</h2>
+
+        <a href="sustainable.html">← Back to Home</a>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="solar-hero">
+
+        <div class="hero-content">
+
+            <h1>Solar Energy</h1>
+
+            <h2>Power Your Future With The Sun</h2>
+
+            <p>
+                Solar energy is a renewable source of energy that
+                comes from sunlight. Solar panels capture sunlight
+                and convert it into electricity that can be used
+                in homes, schools, businesses and industries.
+            </p>
+
+            <a href="#how" class="btn">
+                Explore Solar Energy
+            </a>
+
+        </div>
+
+
+        <div class="hero-image">
+            <img src="">
+        </div>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+
+    <section>
+
+        <h2 class="heading">
+            What is Solar Energy?
+        </h2>
+
+        <p class="intro">
+
+            Solar energy is energy obtained from the Sun.
+            It is one of the most widely used renewable energy
+            sources. Solar panels use photovoltaic cells to
+            convert sunlight into electrical energy.
+
+            Unlike fossil fuels, sunlight is naturally replenished,
+            making solar power an important part of a sustainable
+            energy system.
+
+        </p>
+
+    </section>
+
+
+    <!-- HOW SOLAR ENERGY WORKS -->
+
+    <section id="how">
+
+        <h2 class="heading">
+            How Does Solar Energy Work?
+        </h2>
+
+
+        <div class="process">
+
+            <div class="process-box">
+
+                <div class="icon">☀️</div>
+
+                <h3>1. Sunlight</h3>
+
+                <p>
+                    Sunlight reaches the surface of the solar panels.
+                </p>
+
+            </div>
+
+
+            <div class="process-box">
+
+                <div class="icon">🔆</div>
+
+                <h3>2. Solar Panels</h3>
+
+                <p>
+                    Photovoltaic cells capture sunlight and produce
+                    electrical energy.
+                </p>
+
+            </div>
+
+
+            <div class="process-box">
+
+                <div class="icon">⚡</div>
+
+                <h3>3. Electricity</h3>
+
+                <p>
+                    The generated electricity can be converted
+                    and supplied to electrical devices.
+                </p>
+
+            </div>
+
+
+            <div class="process-box">
+
+                <div class="icon">🏠</div>
+
+                <h3>4. Use Energy</h3>
+
+                <p>
+                    Solar electricity can power lights, appliances,
+                    machines and other devices.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BENEFITS -->
+
+    <section class="benefits">
+
+        <h2 class="heading" style="color:white;">
+            Benefits of Solar Energy
+        </h2>
+
+
+        <div class="benefit-container">
+
+            <div class="benefit">
+
+                <div class="benefit-icon">🌱</div>
+
+                <h3>Clean Energy</h3>
+
+                <p>
+                    Solar power produces electricity without
+                    directly burning fossil fuels.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">☀️</div>
+
+                <h3>Renewable Source</h3>
+
+                <p>
+                    Solar energy comes from sunlight, which is
+                    naturally replenished.
+                </p>
+
+            </div>
+
+
+            <div class="benefit">
+
+                <div class="benefit-icon">🏠</div>
+
+                <h3>Useful at Home</h3>
+
+                <p>
+                    Solar panels can be installed on homes,
+                    buildings and other suitable locations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CALCULATOR -->
+
+    <section>
+
+        <h2 class="heading">
+            Solar Power Calculator
+        </h2>
+
+        <div class="calculator">
+
+            <p>
+                Enter the number of solar panels you have.
+            </p>
+
+            <input
+                type="number"
+                id="panels"
+                placeholder="Number of panels"
+            >
+
+            <button onclick="calculateSolar()">
+                Calculate
+            </button>
+
+            <div id="solarResult"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 EcoPower | Solar Energy for a Sustainable Future 🌱
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function calculateSolar() {
+
+            let panels =
+                document.getElementById("panels").value;
+
+
+            if (panels === "" || panels <= 0) {
+
+                document.getElementById("solarResult").innerHTML =
+                    "Please enter a valid number of panels.";
+
+                return;
+            }
+
+
+            /*
+              Example calculation:
+              Assuming approximately 400 watts
+              per solar panel.
+            */
+
+            let power = panels * 400;
+
+
+            document.getElementById("solarResult").innerHTML =
+                "Your " + panels +
+                " solar panel(s) could have an approximate capacity of "
+                + power + " watts (under the stated assumption). ☀️";
+
+        }
+
+    </script>
+
+
+</body>
+</html>

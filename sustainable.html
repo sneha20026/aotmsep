@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sustainable Energy</title>
+    
+    <link rel="stylesheet" href="sustaniable.css"
+
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>🌱 EcoPower</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#energy">Energy</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#calculator">Calculator</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="hero-text">
+
+            <h1>Powering a Greener Future</h1>
+
+            <p>
+                Sustainable energy helps us create a cleaner,
+                healthier and more environmentally friendly future.
+                Let's choose renewable energy and protect our planet.
+            </p>
+
+            <a href="#energy" class="btn">Explore Energy</a>
+
+        </div>
+
+        <div class="hero-image">
+            <img src="images3/s.2.png"
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2 class="heading">What is Sustainable Energy?</h2>
+
+        <p class="about">
+            Sustainable energy is energy produced and used in a way
+            that meets our present needs without harming the ability
+            of future generations to meet their needs. Renewable
+            sources such as sunlight, wind, water and biomass can
+            provide cleaner alternatives to fossil fuels. Sustainable
+            energy can help reduce pollution, protect natural resources
+            and fight climate change.
+        </p>
+
+    </section>
+
+
+    <!-- ENERGY TYPES -->
+    <section id="energy">
+
+        <h2 class="heading">Types of Renewable Energy</h2>
+
+        <div class="energy-container">
+
+            <div class="energy-card">
+                <div class="icon">☀️</div>
+                <h3>Solar Energy</h3>
+        
+                <p>
+                    Energy obtained from sunlight using solar panels
+                    and other technologies for substain energy.
+                </p>
+            <a href="solar.html"class="solar-btn">Know More</a>
+                
+            </div>
+    
+
+            <div class="energy-card">
+                <div class="icon">💨</div>
+                <h3>Wind Energy</h3>
+                <p>
+                    Wind turbines convert the movement of air into
+                    useful electrical energy.
+                </p>
+                 <a href="wind.html"class="solar-btn">Know More</a>
+            </div>
+
+            <div class="energy-card">
+                <div class="icon">💧</div>
+                <h3>Hydropower</h3>
+                <p>
+                    Moving water can be used to generate electricity
+                    through hydroelectric systems.
+                </p>
+                 <a href="hydro.html"class="solar-btn">Know More</a>
+            </div>
+
+            <div class="energy-card">
+                <div class="icon">🌱</div>
+                <h3>Biomass</h3>
+                <p>
+                    Organic materials such as plants and agricultural
+                    waste can be used as an energy source.
+                </p>
+                 <a href="bio.html"class="solar-btn">Know More</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BENEFITS -->
+    <section class="benefits" id="benefits">
+
+        <h2 class="heading" style="color:white;">
+            Benefits of Sustainable Energy
+        </h2>
+
+        <div class="benefit-container">
+
+            <div class="benefit">
+                <div style="font-size:45px;">🌍</div>
+                <h3>Protects Earth</h3>
+                <p>
+                    Renewable energy can help reduce environmental
+                    damage and conserve natural resources.
+                </p>
+            </div>
+
+            <div class="benefit">
+                <div style="font-size:45px;">🍃</div>
+                <h3>Less Pollution</h3>
+                <p>
+                    Clean energy sources can reduce harmful emissions
+                    compared with fossil-fuel-based energy.
+                </p>
+            </div>
+
+            <div class="benefit">
+                <div style="font-size:45px;">⚡</div>
+                <h3>Clean Power</h3>
+                <p>
+                    Renewable resources provide alternatives for
+                    producing electricity and heat.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ENERGY CALCULATOR -->
+    <section id="calculator">
+
+        <h2 class="heading">Energy Saving Calculator</h2>
+
+        <div class="calculator">
+
+            <p>
+                Enter the number of units of electricity you use
+                in a month.
+            </p>
+
+            <input
+                type="number"
+                id="units"
+                placeholder="Enter electricity units">
+
+            <button onclick="calculateEnergy()">
+                Calculate
+            </button>
+
+            <div id="result"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FACTS -->
+    <section>
+
+        <h2 class="heading">Did You Know?</h2>
+
+        <div class="fact-box">
+
+            <p id="fact">
+                Click the button to discover an energy fact!
+            </p>
+
+            <button onclick="showFact()">
+                Show Energy Fact
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact">
+
+        <h2 class="heading">Join the Green Movement</h2>
+
+        <p>
+            Small actions can create a big difference.
+            Start saving energy and encourage others to do the same.
+        </p>
+
+        <a href="mailto:example@email.com" class="btn">
+            Contact Us
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 EcoPower | Sustainable Energy for a Better Future 🌱</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function calculateEnergy() {
+
+            let units = document.getElementById("units").value;
+
+            if (units === "" || units <= 0) {
+
+                document.getElementById("result").innerHTML =
+                    "Please enter a valid number.";
+
+            } else {
+
+                let saving = units * 0.20;
+
+                document.getElementById("result").innerHTML =
+                    "If you save 20% energy, you could reduce your usage by approximately "
+                    + saving.toFixed(1) + " units per month. 🌱";
+
+            }
+        }
+
+
+        let facts = [
+
+            "Solar energy comes from the Sun and can be converted into electricity.",
+
+            "Wind turbines use moving air to generate electricity.",
+
+            "Hydropower uses the movement of water to produce electricity.",
+
+            "Renewable energy sources are naturally replenished.",
+
+            "Saving electricity at home can reduce unnecessary energy consumption."
+
+        ];
+
+
+        let factIndex = 0;
+
+
+        function showFact() {
+
+            document.getElementById("fact").innerHTML =
+                facts[factIndex];
+
+            factIndex++;
+
+            if (factIndex >= facts.length) {
+                factIndex = 0;
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
+
+
+   
