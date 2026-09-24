@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,319 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Sustainable Energy</title>
+    
+    <link rel="stylesheet" href="sustaniable.css"
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4fff4;
-            color: #183b20;
-        }
-
-        /* NAVBAR */
-        nav {
-            background: #123d25;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 7%;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav h2 {
-            color: #9cff9c;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            color: #9cff9c;
-        }
-
-        /* HERO */
-        .hero {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 60px 8%;
-            background: linear-gradient(135deg, #dfffe2, #9de6a5);
-        }
-
-        .hero-text {
-            width: 50%;
-        }
-
-        .hero-text h1 {
-            font-size: 55px;
-            color: #123d25;
-            margin-bottom: 20px;
-        }
-
-        .hero-text p {
-            font-size: 19px;
-            line-height: 1.7;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 25px;
-            background: #1c7c3c;
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-        }
-
-        .btn:hover {
-            background: #123d25;
-        }
-
-    .hero-image img {
-    width: 580px;
-    max-width: 100%;
-    background: transparent;
-    position: absolute;
-    right: 30px;
-    top: 50%;
-    transform: translateY(-60%);
-}
-
-        /* COMMON */
-        section {
-            padding: 70px 8%;
-        }
-
-        .heading {
-            text-align: center;
-            font-size: 38px;
-            margin-bottom: 40px;
-            color: #123d25;
-        }
-
-        /* ABOUT */
-        .about {
-            text-align: center;
-            max-width: 900px;
-            margin: auto;
-            font-size: 18px;
-            line-height: 1.8;
-        }
-
-        /* ENERGY CARDS */
-        .energy-container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .energy-card {
-            background: white;
-            padding: 30px 20px;
-            text-align: center;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px #0002;
-            transition: 0.3s;
-        }
-
-        .energy-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .energy-card .icon {
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
-
-        .energy-card h3 {
-            margin-bottom: 12px;
-            color: #176b35;
-        }
-
-        .energy-card p {
-            line-height: 1.6;
-        }
-
-        /* BENEFITS */
-        .benefits {
-            background: #123d25;
-            color: white;
-        }
-
-        .benefit-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .benefit {
-            padding: 30px;
-            text-align: center;
-            border: 1px solid #ffffff55;
-            border-radius: 15px;
-        }
-
-        .benefit h3 {
-            color: #9cff9c;
-            margin: 15px 0;
-        }
-
-        .benefit p {
-            line-height: 1.6;
-        }
-
-        /* CALCULATOR */
-        .calculator {
-            max-width: 500px;
-            margin: auto;
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 5px 20px #0002;
-            text-align: center;
-        }
-
-        .calculator input {
-            width: 100%;
-            padding: 13px;
-            margin: 15px 0;
-            border: 1px solid #aaa;
-            border-radius: 8px;
-        }
-
-        .calculator button {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            background: #1c7c3c;
-            color: white;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        #result {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #176b35;
-        }
-
-        /* FACT */
-        .fact-box {
-            text-align: center;
-            background: #dfffe2;
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        .fact-box p {
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .fact-box button {
-            padding: 12px 25px;
-            border: none;
-            border-radius: 25px;
-            background: #123d25;
-            color: white;
-            cursor: pointer;
-        }
-
-        /* CONTACT */
-        .contact {
-            text-align: center;
-        }
-
-        .contact p {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #123d25;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 800px) {
-
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero-text {
-                width: 100%;
-            }
-
-            .hero-text h1 {
-                font-size: 40px;
-            }
-
-            .hero-image {
-                width: 100%;
-                font-size: 100px;
-                margin-top: 30px;
-            }
-
-            .energy-container {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .benefit-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 500px) {
-            .energy-container {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
     <!-- NAVBAR -->
     <nav>
-        <h2>🌱 EcoCharge</h2>
+        <h2>🌱 EcoPower</h2>
 
         <ul>
             <li><a href="#home">Home</a></li>
@@ -331,7 +30,6 @@
 
     <!-- HERO -->
     <section class="hero" id="home">
-
         <div class="hero-text">
 
             <h1>Powering a Greener Future</h1>
@@ -347,8 +45,256 @@
         </div>
 
         <div class="hero-image">
-        <img src = "images3/s.2.png"  alt="Sustainable Energy Home">
+            <img src="images3/s.2.png"
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <h2 class="heading">What is Sustainable Energy?</h2>
+
+        <p class="about">
+            Sustainable energy is energy produced and used in a way
+            that meets our present needs without harming the ability
+            of future generations to meet their needs. Renewable
+            sources such as sunlight, wind, water and biomass can
+            provide cleaner alternatives to fossil fuels. Sustainable
+            energy can help reduce pollution, protect natural resources
+            and fight climate change.
+        </p>
+
+    </section>
+
+
+    <!-- ENERGY TYPES -->
+    <section id="energy">
+
+        <h2 class="heading">Types of Renewable Energy</h2>
+
+        <div class="energy-container">
+
+            <div class="energy-card">
+                <div class="icon">☀️</div>
+                <h3>Solar Energy</h3>
+        
+                <p>
+                    Energy obtained from sunlight using solar panels
+                    and other technologies for substain energy.
+                </p>
+            <a href="solar.html"class="solar-btn">Know More</a>
+                
+            </div>
+    
+
+            <div class="energy-card">
+                <div class="icon">💨</div>
+                <h3>Wind Energy</h3>
+                <p>
+                    Wind turbines convert the movement of air into
+                    useful electrical energy.
+                </p>
+                 <a href="wind.html"class="solar-btn">Know More</a>
+            </div>
+
+            <div class="energy-card">
+                <div class="icon">💧</div>
+                <h3>Hydropower</h3>
+                <p>
+                    Moving water can be used to generate electricity
+                    through hydroelectric systems.
+                </p>
+                 <a href="hydro.html"class="solar-btn">Know More</a>
+            </div>
+
+            <div class="energy-card">
+                <div class="icon">🌱</div>
+                <h3>Biomass</h3>
+                <p>
+                    Organic materials such as plants and agricultural
+                    waste can be used as an energy source.
+                </p>
+                 <a href="bio.html"class="solar-btn">Know More</a>
+            </div>
 
         </div>
 
-    
+    </section>
+
+
+    <!-- BENEFITS -->
+    <section class="benefits" id="benefits">
+
+        <h2 class="heading" style="color:white;">
+            Benefits of Sustainable Energy
+        </h2>
+
+        <div class="benefit-container">
+
+            <div class="benefit">
+                <div style="font-size:45px;">🌍</div>
+                <h3>Protects Earth</h3>
+                <p>
+                    Renewable energy can help reduce environmental
+                    damage and conserve natural resources.
+                </p>
+            </div>
+
+            <div class="benefit">
+                <div style="font-size:45px;">🍃</div>
+                <h3>Less Pollution</h3>
+                <p>
+                    Clean energy sources can reduce harmful emissions
+                    compared with fossil-fuel-based energy.
+                </p>
+            </div>
+
+            <div class="benefit">
+                <div style="font-size:45px;">⚡</div>
+                <h3>Clean Power</h3>
+                <p>
+                    Renewable resources provide alternatives for
+                    producing electricity and heat.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ENERGY CALCULATOR -->
+    <section id="calculator">
+
+        <h2 class="heading">Energy Saving Calculator</h2>
+
+        <div class="calculator">
+
+            <p>
+                Enter the number of units of electricity you use
+                in a month.
+            </p>
+
+            <input
+                type="number"
+                id="units"
+                placeholder="Enter electricity units">
+
+            <button onclick="calculateEnergy()">
+                Calculate
+            </button>
+
+            <div id="result"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FACTS -->
+    <section>
+
+        <h2 class="heading">Did You Know?</h2>
+
+        <div class="fact-box">
+
+            <p id="fact">
+                Click the button to discover an energy fact!
+            </p>
+
+            <button onclick="showFact()">
+                Show Energy Fact
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact">
+
+        <h2 class="heading">Join the Green Movement</h2>
+
+        <p>
+            Small actions can create a big difference.
+            Start saving energy and encourage others to do the same.
+        </p>
+
+        <a href="mailto:example@email.com" class="btn">
+            Contact Us
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 EcoPower | Sustainable Energy for a Better Future 🌱</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function calculateEnergy() {
+
+            let units = document.getElementById("units").value;
+
+            if (units === "" || units <= 0) {
+
+                document.getElementById("result").innerHTML =
+                    "Please enter a valid number.";
+
+            } else {
+
+                let saving = units * 0.20;
+
+                document.getElementById("result").innerHTML =
+                    "If you save 20% energy, you could reduce your usage by approximately "
+                    + saving.toFixed(1) + " units per month. 🌱";
+
+            }
+        }
+
+
+        let facts = [
+
+            "Solar energy comes from the Sun and can be converted into electricity.",
+
+            "Wind turbines use moving air to generate electricity.",
+
+            "Hydropower uses the movement of water to produce electricity.",
+
+            "Renewable energy sources are naturally replenished.",
+
+            "Saving electricity at home can reduce unnecessary energy consumption."
+
+        ];
+
+
+        let factIndex = 0;
+
+
+        function showFact() {
+
+            document.getElementById("fact").innerHTML =
+                facts[factIndex];
+
+            factIndex++;
+
+            if (factIndex >= facts.length) {
+                factIndex = 0;
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
+
+
+   
